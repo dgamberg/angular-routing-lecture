@@ -8,6 +8,10 @@ module.exports = function(grunt){
             build: {
                 src: 'client/scripts/*.js',
                 dest: 'server/public/assets/scripts/app.min.js'
+            },
+            controller: {
+                src: 'client/scripts/controllers/*.js',
+                dest: 'server/public/assets/scripts/controllers.min.js'
             }
 
         },
@@ -29,14 +33,43 @@ module.exports = function(grunt){
                 ],
                 "dest": "server/public/vendors/"
             },
+
+            angularRoute: {
+                expand: true,
+                cwd: 'node_modules/angular-route',
+                src: [
+                    "angular-route.min.js",
+                    "angular-route.min.js.map"
+                ],
+                "dest": "server/public/vendors/"
+            },
+
             html: {
                 expand: true,
                 cwd: 'client/views/',
                 src: [
-                    "*.html"
+                    "*.*"
 
                 ],
                 "dest": "server/public/assets/views/"
+            },
+            htmlRoutes: {
+                expand: true,
+                cwd: 'client/views/routes',
+                src: [
+                    "*.*"
+
+                ],
+                "dest": "server/public/assets/views/routes/"
+            },
+            htmlTemplates: {
+                expand: true,
+                cwd: 'client/views/templates',
+                src: [
+                    "*.*"
+
+                ],
+                "dest": "server/public/assets/views/templates/"
             },
             style: {
                 expand: true,

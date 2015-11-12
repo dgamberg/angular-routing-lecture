@@ -8,23 +8,22 @@
     <link rel="stylesheet" href="/vendors/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/styles/style.css">
 
-    <!--SCRIPTS-->
-    <script type="text/javascript" src="/vendors/angular.min.js"></script>
-    <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+
 </head>
 <body>
-    <div class="container">
 
-        <h1>ZETA!</h1>
-        <div ng-controller="WelcomeController">
-            <p>{{info.message}}</p>
-            <button ng-click="changeMessage()">Click Me</button>
 
-            <div ng-repeat="person in people | orderBy : '-rank' | limitTo : 2 ">
-                <profile-info info="person"></profile-info>
-            </div>
-        </div>
+    <header ng-include="'/assets/views/templates/header.html'"></header>
+    <nav ng-include="'/assets/views/templates/nav.html'"></nav>
+    <main ng-view class="text-center"></main>
 
-    </div>
+    <footer ng-include="'/assets/views/templates/footer.html'"></footer>
+
+<!--SCRIPTS-->
+
+  <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+  <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/controllers.min.js"></script>
 </body>
 </html>
